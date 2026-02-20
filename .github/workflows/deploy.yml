@@ -2,8 +2,8 @@ name: Deploy Jekyll site with Minimal Mistakes
 
 on:
   push:
-    branches: ["main"] # 본인의 기본 브랜치 이름 확인 (main 또는 master)
-  workflow_dispatch: # 수동 실행 버튼 활성화
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -24,8 +24,8 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # Ruby 버전 설정
-          bundler-cache: true # 의존성 패키지(Gem) 자동 캐싱으로 속도 향상
+          ruby-version: '3.3' # 깃허브 액션 환경에서 가장 안정적인 최신 버전
+          bundler-cache: true # Gem 설치 속도를 비약적으로 높여줍니다.
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
